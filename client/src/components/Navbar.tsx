@@ -56,7 +56,7 @@ export default function Navbar() {
 
           {/* Center logo */}
           <a
-            href="/"
+            href={import.meta.env.BASE_URL}
             className="flex items-center gap-2.5 absolute left-1/2 -translate-x-1/2"
           >
             <div

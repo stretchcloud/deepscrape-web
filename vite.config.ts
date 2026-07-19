@@ -5,10 +5,11 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  // Relative base so the built asset URLs resolve correctly whether the site is
-  // served from a project-pages path (username.github.io/repo/) or from a custom
-  // domain at the root. No rebuild needed when the domain is attached later.
-  base: "./",
+  // Deploy base path. On GitHub Pages this project is served under
+  // /deepscrape-web/, so assets AND the client-side router (see App.tsx, which
+  // reads import.meta.env.BASE_URL) are anchored here. When a custom domain is
+  // attached the site moves to the domain root — change this to "/" and rebuild.
+  base: "/deepscrape-web/",
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
